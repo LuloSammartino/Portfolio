@@ -1,0 +1,18 @@
+.gallery { position: relative; min-width: 0; }
+.imagePreview { display: block; width: 100%; padding: 0; border: 1px solid #333b3d; border-radius: .5rem; overflow: hidden; background: #f7f9fc; cursor: zoom-in; }
+.imagePreview img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; }
+.carouselControls { position: absolute; top: 50%; left: .375rem; right: .375rem; transform: translateY(-50%); display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
+.carouselControls span { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.carouselControls button { pointer-events: auto; }
+.lightbox { width: min(96vw, 1600px); max-width: 96vw; max-height: 94dvh; padding: clamp(.75rem, 2vw, 1.5rem); border: 1px solid #373d40; border-radius: .75rem; background: #141516; color: #eeeeef; }
+.lightbox::backdrop { background: rgb(0 0 0 / .85); }
+.lightboxHeader { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; }
+.lightbox button { flex-shrink: 0; width: 44px; height: 44px; border: 1px solid #373d40; border-radius: .5rem; background: #222629; color: #cbf277; font-size: 1.25rem; cursor: pointer; }
+.lightbox button:hover { background: #333b3d; }
+.lightboxStage { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; gap: clamp(.25rem, 1vw, 1rem); align-items: center; }
+.lightboxStage img { display: block; width: 100%; max-height: 70dvh; object-fit: contain; }
+.lightboxCaption { margin: .75rem 0 0; text-align: center; font-size: .875rem; }
+.arrowButton, .lightbox .arrowButton { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #fff; cursor: pointer; }
+.arrowButton svg { width: 28px; height: 28px; padding: 5px; border-radius: 50%; background: rgb(20 21 22 / .65); }
+.arrowButton:hover, .lightbox .arrowButton:hover { background: transparent; }
+.arrowButton:hover svg { background: #333b3d; }
