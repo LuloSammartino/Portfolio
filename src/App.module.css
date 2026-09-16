@@ -59,6 +59,8 @@
 .projectDetails small { display: block; font-size: .875rem; color: #9ba1a7; margin-bottom: .5rem; }
 .projectDetails h3 { font-size: 1.25rem; line-height: 1.4; margin-bottom: .75rem; }
 .projectDetails p { margin-bottom: 1rem; }
+.moreButton { display: block; padding: .25rem 0; margin: -.5rem 0 1rem; min-height: 44px; border: 0; background: transparent; color: #cbf277; font: inherit; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.repositoryButton { margin: 0 .5rem .5rem 0; vertical-align: top; line-height: 1.5; }
 .projectDetails > a { display: inline-block; padding-block: .625rem; color: #cbf277; }
 .projectDetails > .repositoryButton { display: inline-flex; align-items: center; gap: .625rem; min-height: 44px; padding: .625rem 1rem; border: 1px solid #373d40; border-radius: .5rem; background: #222629; text-decoration: none; }
 .projectDetails > .repositoryButton:hover { background: #333b3d; border-color: #cbf277; }
@@ -158,4 +160,36 @@
 
 @media (prefers-reduced-motion: reduce) {
   :global(html) { scroll-behavior: auto; }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(var(--entrance-distance, 40px)); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen {
+  .brand, .nav, .intro > *, .sectionTitle, .card > *,
+  .about p, .about .tags, :global(#contacto) > p, .contactCard, .footer {
+    animation: appear 900ms cubic-bezier(.22, 1, .36, 1) backwards;
+    animation-delay: var(--entrance-delay, 0ms);
+  }
+  .nav { --entrance-delay: 150ms; }
+  .intro > :nth-child(1) { --entrance-delay: 300ms; }
+  .intro > :nth-child(2) { --entrance-delay: 500ms; }
+  .intro > :nth-child(3) { --entrance-delay: 700ms; }
+  .sectionTitle { --entrance-delay: 900ms; }
+  .card > :nth-child(1) { --entrance-delay: 1100ms; }
+  .card > :nth-child(2) { --entrance-delay: 1300ms; }
+  .card:nth-child(2) > :nth-child(1) { --entrance-delay: 1400ms; }
+  .card:nth-child(2) > :nth-child(2) { --entrance-delay: 1550ms; }
+  .about p, :global(#contacto) > p { --entrance-delay: 1500ms; }
+  .about .tags, .contactCard { --entrance-delay: 1650ms; }
+  .contactCard:nth-child(2) { --entrance-delay: 1750ms; }
+  .contactCard:nth-child(3), .footer { --entrance-delay: 1850ms; }
+  .brand:focus-visible, .nav:focus-within, .card > :focus-within,
+  .contactCard:focus-within { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(:root) { --entrance-distance: 0px; }
 }

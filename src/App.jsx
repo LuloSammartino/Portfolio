@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import ProjectCarousel from './components/ProjectCarousel'
 import styles from './App.module.css'
 import { portfolio as p } from './content'
 
 const technologyIcons = {
+  HTML: { file: 'html5', color: '#e34f26' },
+  CSS: { file: 'css3', color: '#1572b6' },
+  Sass: { file: 'sass', color: '#cc6699' },
+  'Tailwind CSS': { file: 'tailwindcss', color: '#06b6d4' },
+  SQL: { file: 'database', color: '#b5b7ba' },
+  Python: { file: 'python', color: '#3776ab' },
+  JavaScript: { file: 'javascript', color: '#f7df1e' },
+  FastAPI: { file: 'fastapi', color: '#009688' },
+  OracleDB: { file: 'oracle', color: '#f80000' },
   TypeScript: { file: 'typescript', color: '#3178c6' },
   React: { file: 'react', color: '#61dafb' },
   'Node.js': { file: 'nodedotjs', color: '#5fa04e' },
@@ -10,6 +20,7 @@ const technologyIcons = {
 }
 
 export default function App() {
+  const [expanded, setExpanded] = useState({})
   return <>
     <a className={styles.skip} href="#contenido">Saltar al contenido</a>
 
@@ -39,8 +50,10 @@ export default function App() {
               {item}
             </li>)}</ul>}
             </div>
-            <div className={styles.projectDetails}><small>{project.category}</small><h3>{project.title}</h3><p>{project.description}</p>
-          {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer">Ver proyecto <span aria-hidden="true">↗</span></a>}
+            <div className={styles.projectDetails}><small>{project.category}</small><h3>{project.title}</h3>
+            <p id={`description-${index}`}>{project.description.length > 180 && !expanded[index] ? `${project.description.slice(0, 180).replace(/\s+\S*$/, '')}…` : project.description}</p>
+            {project.description.length > 180 && <button type="button" className={styles.moreButton} aria-expanded={!!expanded[index]} aria-controls={`description-${index}`} onClick={() => setExpanded(previous => ({ ...previous, [index]: !previous[index] }))}>{expanded[index] ? 'Menos' : 'Más'}</button>}
+          {project.url && <a className={styles.repositoryButton} href={project.url} target="_blank" rel="noopener noreferrer">Ver proyecto <span aria-hidden="true">↗</span></a>}
           {project.github && <a className={styles.repositoryButton} href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Ver repositorio de ${project.title} en GitHub`}>
             <span className={`${styles.contactIcon} ${styles.githubIcon}`} aria-hidden="true" />Ver en GitHub
           </a>}
@@ -50,7 +63,10 @@ export default function App() {
 
       <section className={styles.section} id="sobre-mi" aria-labelledby="titulo-sobre-mi"><div className={styles.about}>
         <div className={styles.sectionTitle}><span>02 /</span><h2 id="titulo-sobre-mi">Sobre mí</h2></div>
-        <div><p>{p.about}</p><ul className={styles.tags} aria-label="Habilidades">{p.skills.map(skill => <li key={skill}>{skill}</li>)}</ul></div>
+        <div><p>{p.about}</p><ul className={`${styles.tags} ${styles.technologyTags}`} aria-label="Habilidades">{p.skills.map(skill => <li key={skill}>
+          {technologyIcons[skill] && <span className={styles.technologyIcon} aria-hidden="true" style={{ '--technology-icon': `url('/icons/technologies/${technologyIcons[skill].file}.svg')`, color: technologyIcons[skill].color }} />}
+          {skill}
+        </li>)}</ul></div>
       </div>
       </section>
       
