@@ -17,6 +17,7 @@ const technologyIcons = {
   React: { file: 'react', color: '#61dafb' },
   'Node.js': { file: 'nodedotjs', color: '#5fa04e' },
   Supabase: { file: 'supabase', color: '#3fcf8e' },
+  Git: { file: 'git', color: '#f05032' },
 }
 
 export default function App() {
@@ -24,12 +25,12 @@ export default function App() {
   const [language, setLanguage] = useState('es')
   const p = { ...portfolio, ...portfolio[language] }
   const t = language === 'es' ? {
-    skip: 'Saltar al contenido', nav: 'Navegación principal', projects: 'Proyectos', about: 'Sobre mí', contact: 'Contacto',
+    downloadCV: 'Descargar CV', skip: 'Saltar al contenido', nav: 'Navegación principal', projects: 'Proyectos', about: 'Sobre mí', contact: 'Contacto',
     hello: 'Hola, soy', technologies: 'Tecnologías usadas', skills: 'Habilidades', more: 'Más', less: 'Menos', viewProject: 'Ver proyecto',
     viewRepository: 'Ver repositorio', contactText: '¿Tenés un proyecto en mente? Hablemos.', visit: 'Visitar mi', write: 'Escribir a', gmail: 'en Gmail',
     language: 'Cambiar el idioma a inglés', carousel: { region: 'Capturas de', enlarge: 'Ampliar imagen', previous: 'Imagen anterior', next: 'Imagen siguiente', lightbox: 'Imágenes ampliadas de', close: 'Cerrar imagen ampliada' },
   } : {
-    skip: 'Skip to content', nav: 'Main navigation', projects: 'Projects', about: 'About me', contact: 'Contact',
+    downloadCV: 'Download CV', skip: 'Skip to content', nav: 'Main navigation', projects: 'Projects', about: 'About me', contact: 'Contact',
     hello: "Hi, I'm", technologies: 'Technologies used', skills: 'Skills', more: 'More', less: 'Less', viewProject: 'View project',
     viewRepository: 'View repository', contactText: 'Have a project in mind? Let’s talk.', visit: 'Visit my', write: 'Email', gmail: 'in Gmail',
     language: 'Cambiar el idioma a español', carousel: { region: 'Screenshots of', enlarge: 'Enlarge image', previous: 'Previous image', next: 'Next image', lightbox: 'Enlarged images of', close: 'Close enlarged image' },
@@ -51,6 +52,7 @@ export default function App() {
     </header>
     <main className={styles.container} id="contenido">
       <div className={styles.intro} id="inicio"><div className={styles.eyebrow}>{p.role}</div><h1>{t.hello}<br /><span>{p.name}.</span></h1><p>{p.introduction}</p>
+        <a className={styles.downloadButton} href={`${import.meta.env.BASE_URL}LucianoSammartinoCV.pdf`} download="LucianoSammartinoCV.pdf">{t.downloadCV} <span aria-hidden="true">↓</span></a>
       </div>
 
       

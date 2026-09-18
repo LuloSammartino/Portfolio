@@ -52,6 +52,8 @@
 }
 .intro h1 span { color: #cbf277; }
 .intro p { max-width: 40rem; font-size: 1.125rem; margin-bottom: 0; }
+.downloadButton { display: inline-flex; align-items: center; gap: .625rem; margin-top: 1.5rem; min-height: 44px; padding: .625rem 1rem; border: 1px solid #cbf277; border-radius: .5rem; background: #cbf277; color: #141516; font-weight: 600; text-decoration: none; }
+.downloadButton:hover { background: #b6df60; border-color: #b6df60; }
 
 .section { padding-block: 2.5rem; scroll-margin-top: 1.5rem; }
 .sectionTitle { display: flex; align-items: baseline; gap: .75rem; margin-bottom: 1.75rem; }
@@ -183,6 +185,7 @@
   .intro > :nth-child(1) { --entrance-delay: 300ms; }
   .intro > :nth-child(2) { --entrance-delay: 500ms; }
   .intro > :nth-child(3) { --entrance-delay: 700ms; }
+  .intro > :nth-child(4) { --entrance-delay: 850ms; }
   .sectionTitle { --entrance-delay: 900ms; }
   .card > :nth-child(1) { --entrance-delay: 1100ms; }
   .card > :nth-child(2) { --entrance-delay: 1300ms; }

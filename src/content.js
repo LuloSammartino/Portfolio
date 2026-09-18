@@ -1,6 +1,6 @@
 export const portfolio = {
   name: 'Luciano Sammartino',
-  skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Sass', 'Tailwind CSS', 'SQL', 'Node.js', 'Supabase', 'OracleDB'],
+  skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Sass', 'Tailwind CSS', 'SQL', 'Node.js', 'Supabase', 'OracleDB', 'Git'],
   linkedin: 'https://www.linkedin.com/in/luciano-sammartino-26343b268/', 
   github: 'https://github.com/LuloSammartino', 
   email: 'lucianosammar@gmail.com', 
