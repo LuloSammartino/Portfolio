@@ -52,7 +52,7 @@ export default function App() {
     </header>
     <main className={styles.container} id="contenido">
       <div className={styles.intro} id="inicio"><div className={styles.eyebrow}>{p.role}</div><h1>{t.hello}<br /><span>{p.name}.</span></h1><p>{p.introduction}</p>
-        <a className={styles.downloadButton} href={`${import.meta.env.BASE_URL}LucianoSammartinoCV.pdf`} download="LucianoSammartinoCV.pdf">{t.downloadCV} <span aria-hidden="true">↓</span></a>
+        <a className={styles.downloadButton} href={`${import.meta.env.BASE_URL}LucianoSammartinoCV.pdf`} download="LucianoSammartinoCV.pdf">{t.downloadCV} <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 13v8m-4-4 4 4 4-4M5 17H4a3 3 0 0 1-.6-5.94A5 5 0 0 1 13 9.5a4 4 0 0 1 6.9 3.7A3 3 0 0 1 19 19h-1" /></svg></a>
       </div>
 
       
