@@ -195,8 +195,6 @@
   .about .tags, .contactCard { --entrance-delay: 1650ms; }
   .contactCard:nth-child(2) { --entrance-delay: 1750ms; }
   .contactCard:nth-child(3), .footer { --entrance-delay: 1850ms; }
-  .brand:focus-visible, .nav:focus-within, .languageSwitch:focus-visible, .card > :focus-within,
-  .contactCard:focus-within { animation: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
