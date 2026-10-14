@@ -5,7 +5,7 @@ export const portfolio = {
   github: 'https://github.com/LuloSammartino', 
   email: 'lucianosammar@gmail.com', 
   es: {
-    role: 'Junior Web Developer',
+    role: 'Programador Web',
     introduction: 'Transformo necesidades reales en aplicaciones web. Desarrollo interfaces con React y las conecto con APIs y bases de datos para construir soluciones completas. Busco sumarme a un equipo donde aportar, aprender y seguir creciendo como desarrollador.',
     about: 'Soy Luciano, tengo 21 años y me formo en desarrollo web desde 2024. Me interesa entender el problema detrás de cada proyecto y convertirlo en una herramienta útil y fácil de usar. Me atrae especialmente el frontend, pero también trabajo con backend. Quiero aportar esa mirada práctica a un equipo que valore la iniciativa, el aprendizaje y el cuidado por los detalles.',
     projects: [
@@ -30,7 +30,7 @@ export const portfolio = {
     ],
   },
   en: {
-    role: 'Junior Web Developer',
+    role: 'Web Developer',
     introduction: 'I turn real needs into web applications. I build interfaces with React and connect them to APIs and databases to create complete solutions. I am looking to join a team where I can contribute, learn, and keep growing as a developer.',
     about: 'I am Luciano, I am 21 years old, and I have been studying web development since 2024. I enjoy understanding the problem behind each project and turning it into a useful, easy-to-use tool. I am especially drawn to frontend development, but I also work with backend technologies. I want to bring this practical mindset to a team that values initiative, learning, and attention to detail.',
     projects: [
